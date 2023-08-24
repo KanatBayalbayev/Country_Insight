@@ -1,4 +1,4 @@
-package com.example.country_insight
+package com.example.country_insight.api
 
 import androidx.lifecycle.LiveData
 import com.example.country_insight.pojo.JsonObject
