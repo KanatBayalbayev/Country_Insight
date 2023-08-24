@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Country_Insight</string>
-    <string name="country_info">Country Info</string>
+    <string name="country_info">Country Insight</string>
     <string name="enter_the_name_of_a_country">Enter the name of a country</string>
     <string name="search">Search</string>
+    <string name="errorMessage">Ошибка загрузки...</string>
+    <string name="flag">flag</string>
+    <string name="capital_template">Capital: %s</string>
+    <string name="subregion_template">Subregion: %s</string>
+    <string name="population_template">Population: %s</string>
 </resources>

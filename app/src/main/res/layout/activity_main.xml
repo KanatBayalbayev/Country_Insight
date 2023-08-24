@@ -8,9 +8,12 @@
 
     <TextView
         android:id="@+id/logo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background ="@android:color/holo_blue_dark"
+        android:textColor="@color/white"
         android:text="@string/country_info"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -19,29 +22,102 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/logo">
 
         <EditText
             android:id="@+id/inputFromUser"
-            android:inputType="text"
-            android:autofillHints="name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/enter_the_name_of_a_country"
             android:layout_marginEnd="30dp"
-             />
+            android:autofillHints="name"
+            android:hint="@string/enter_the_name_of_a_country"
+            android:inputType="text" />
+
         <Button
             android:id="@+id/buttonToGetData"
-            android:text="@string/search"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:text="@string/search" />
     </LinearLayout>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+
+    <LinearLayout
+        android:id="@+id/mainLinearLayot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewFlag"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:contentDescription="@string/flag"
+                tools:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/textViewCountryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:textSize="20sp"
+                tools:text="Kazakhstan" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewCapital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Capital: Astana" />
+
+            <TextView
+                android:id="@+id/textViewSubregion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:text="Subregion: Central Asia" />
+
+            <TextView
+                android:id="@+id/textViewPopulation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:text="Population: 18754440" />
+
+        </LinearLayout>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
